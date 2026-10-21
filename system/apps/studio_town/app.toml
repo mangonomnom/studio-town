@@ -1,0 +1,14 @@
+name = "studio-town"
+display_name = "Studio town"
+icon = "icon.svg"
+priority = "user"
+program = "studio-town"
+# Keeps running with no window open: it repaints the town on a timer, polls the
+# chats against the apps, and runs little-me's background work and reaper.
+stop_when_no_windows = false
+
+# How update-app boots a throwaway preview of this app: on a free port, over a
+# scratch copy of its data (see .agents/skills/update-app/scripts/preview_app.py).
+[preview]
+env = {STUDIO_TOWN_PORT = "{port:main}", STUDIO_TOWN_HOST = "{host}", STUDIO_TOWN_DATA_DIR = "{copy:data}"}
+copies = {data = "data/.apps/studio-town"}
